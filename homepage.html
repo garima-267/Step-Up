@@ -27,7 +27,7 @@
 </head>
 
 
-<body style="background-color: white; color:black; max-width: 100%; overflow-x: hidden;">
+<body style="background-color: black; color:black; max-width: 100%; overflow: hidden; ">
 
 
 
@@ -91,7 +91,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/help.html" data-toggle="popover" title="Questionnaire" data-content="And here's soaging. Right?">
+            <a class="nav-link" href="/queries.html" data-toggle="popover" title="Questionnaire" data-content="And here's soaging. Right?">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="light"
                 class="bi bi-question-circle" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -123,7 +123,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form  id="formlogin" class="formlogin">
+        <form  id="formlogin" class="formlogin" onsubmit="addData()" action="pythonweb.py" method="post">
         <div class="modal-body mx-3">
           <div class="md-form">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
@@ -153,7 +153,7 @@
 
         </div>
         <div class="modal-footer d-flex justify-content-center">
-          <button class="btn btn-danger">Login</button>
+         <a><input type="submit" class="btn btn-danger" name="Login" value="Login" onclick="window.location.href='aboutus.html';"></a> 
         </div>
         </form>
       </div>
@@ -173,13 +173,13 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form  id="form" class="form">
+        <form  id="form" class="form" onsubmit="addData()" action="pythonweb.py" method="post">
         <div class="modal-body mx-3">
           <div class="md-form">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
               <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
             </svg>
-            <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
+            <label data-error="wrong" data-success="right" for="orangeForm-name" name="name" value="name">Your name</label>
             <input type="text" id="name" class="form-control validate">
             <small>Error Message</small>
           </div>
@@ -188,7 +188,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
               <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
             </svg>
-            <label data-error="wrong" data-success="right" for="orangeForm-pass">Username</label>
+            <label data-error="wrong" data-success="right" for="orangeForm-pass" name="uname" value="uname">Username</label>
             <input type="text" id="username" class="form-control validate">
             <small>Error Message</small>
           </div>
@@ -198,7 +198,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
               <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
             </svg>
-            <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
+            <label data-error="wrong" data-success="right" for="orangeForm-email" name="email" value="email">Your email</label>
             <input type="email" id="email" class="form-control validate">
             <small>Error Message</small>
           </div>
@@ -207,7 +207,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
               <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
             </svg>
-            <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
+            <label data-error="wrong" data-success="right" for="orangeForm-pass" name="password" value="password">Your password</label>
             <input type="password" id="password" class="form-control validate">
             <small>Error Message</small>
           </div>
@@ -216,14 +216,14 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
               <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
             </svg>
-            <label data-error="wrong" data-success="right" for="orangeForm-pass">Confirm password</label>
+            <label data-error="wrong" data-success="right" for="orangeForm-pass" name="confirm" value="confirm">Confirm password</label>
             <input type="password" id="password2" class="form-control validate">
             <small>Error Message</small>
           </div>
 
         </div>
         <div class="modal-footer d-flex justify-content-center">
-          <button class="btn btn-danger">Sign up</button>
+          <input type="submit" class="btn btn-danger" value="SignUp">
         </div>
       </form>
       </div>
@@ -236,87 +236,91 @@
 
 
 
-  <p class="d-flexbox p-4 text-justify font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  text-darklight">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta perspiciatis facere obcaecati maxime sunt fuga,
-    illo laudantium aspernatur sapiente laborum! Quam animi, cumque atque quaerat sit commodi quis suscipit! Enim
-    hic quas quo repudiandae sequi ea! At, totam modi. Quis hic tenetur velit voluptatibus, facere fuga! Modi
-    aspernatur facere, atque voluptatum dolore voluptatibus dolor non magni, dignissimos provident laboriosam veniam
-    aliquam placeat illum debitis harum delectus autem, suscipit saepe! Quisquam voluptatem maiores provident ut,
-    veniam nihil repudiandae sunt quasi minus laborum assumenda corporis, delectus, cumque consequuntur velit
-    ducimus nam odio adipisci aliquid dolore possimus! Ducimus reprehenderit voluptatibus enim eligendi atque qui
-    hic alias odit, beatae rerum perspiciatis itaque maxime facere commodi debitis necessitatibus, provident
-    distinctio aperiam! Magnam, enim suscipit? Unde voluptates laboriosam quas officiis quaerat maxime corporis
-    veniam ipsum eum aliquid facilis reiciendis dolores, at, odit error ipsa rerum iusto, laborum autem dignissimos
-    fugiat velit. Cupiditate veniam perferendis tenetur enim a qui quam aperiam aliquam ex vero maiores nulla est
-    sit dolore autem iusto dicssumenda, suscipit repudiandae optio sed voluptatem eius ducimus, maxime iusto
-    reiciendis. Corporis quia amet atque id sequi architecto cum. Illo repudiandae blanditiis mollitia provident
-    odit earum culpa nemo nisi totam autem quis illum ipsa inventore sequi rerum ipsam, nam, fugiat placeat corporis
-    pariatur perferendis, dolores exercitationem? Natus eos ipsa commodi sint assumenda, molestiae culpa laudantium
-    molestias quia voluptas similique sunt reiciendis libero nulla, facilis tempora autem perspiciatis eum! Repellat
-    omnis iste eligendi a voluptate suscipit, neque natus ut, at illum debitis laudantium architecto aut soluta
-    placeat ea cumque quaerat. Doloribus dignissimos laboriosam ipsam iure delectus aliquid necessitatibus
-    exercitationem quod molestias illo, sint iste, ex reiciendis mollitia quam! Aut, quasi? Accusamus officiis
-    doloremque dignissimos voluptate adipisci dolorum voluptatum quis culpa, quidem quibusdam et sapiente eius, nam
-    architecto fuga quaerat earum necessitatibus dolorem quam corporis ratione neque dolores. Eaque expedita vel
-    pariatur aliquid, enim eveniet quidem accusantium ducimus sapiente, sint laboriosam vitae ad nesciunt velit
-    reiciendis eius voluptates quis? Veniam alias blanditiis, perspiciatis molestiae sunt laboriosam nisi ipsa
-    consequuntur, possimus deserunt atque at eum necessitatibus inventore maiores omnis maxime earum qui dolores
-    repellendus unde, impedit in perferendis dolor! Temporibus omnis similique quisquam, autem hic accusantium
-    reiciendis quia suscipit ullam nihil, enim incidunt porro commodi tempora debitis necessitatibus!
-  </p>
+  <div class="para">
+    <p class="d-flexbox p-4 text-justify font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  text-darklight" style="color: white;">
+      Welcome to <b>|| STEP UP ||</b><br>
+      Your personalised world of progress tracking, brought to you at your fingertips.<br><br>
+  
+      STEP UP is a platform designed for our collegemates, we IISTians, that will help us keep a track of our progress on a regular basis. 
+      STEP UP includes features which will help users get an insight about their progress reports just by registering themselves up. Keeping an analysis
+      of our progress regularly will help our friends know about their strengths and the areas they need to work upon. 
+      <br><br>STEP UP is a completely free of cost platform where users have to register themeselves and feed in their basic details, 
+      answer a simple questionnaire that this website will generate based on their details entered in the form and previous data from our maintained
+      database. This website caters the facilities of self evaluation, self comparsion, tips, suggesstions and one-to-one personal guidance from
+      experts for all your queries, any time, completely free of cost and all at your single click.
+      <br>Login or Register yourself up to get boarded on this amazing journey. 
+    </p>
+  </div>
 
 
 
 
 
 
+  <footer class="page-footer font-small blue pt-4 bg-secondary mb-0"   >
 
-
-  <footer class="pt-5  bg-dark ">
-    <div class="row " >
-
-
-      <div class="col-3 col-md text-center">
-        <h5> <a href="/help.html" >Contact Us</a></h5>
-        <h6 class="text-lowercase text-light font-weight-light text-nowrap" >stepupweb18@gmail.com</h6>
-        <h6 class="text-uppercase text-light font-weight-light">6206087998</h6>
-        <h6 class="text-uppercase font-weight-light"><a href="https://www.instagram.com/stepupweb18/" class="social-icon si-rounded si-small si-linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-instagram" viewBox="0 0 16 16">
-          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-        </svg></a>   <a href="https://www.linkedin.com/in/step-up-528104253/" class="social-icon si-rounded si-small si-linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
-            class="bi bi-linkedin" viewBox="0 0 16 16">
-            <path
-              d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-          </svg></a>  <a href="https://discord.com/" class="social-icon si-rounded si-small si-linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
-            class="bi bi-discord" viewBox="0 0 16 16">
-            <path
-              d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" />
-          </svg></a></h6>
-
-      </div>
-      <div class="col-3 col-md text-center" >
-        <h5><a href="/help.html" >About Us</a></h5>
-
-      </div>
-      <div class="col-3 col-md text-center">
-        <h5><a href="/help.html" >Rate Us</a></h5>
-
-        <div class="rating">
-
-          <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-          <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
-          <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
-          <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
-          <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <div class="col-3 col-md text-center">
+          <h5> <a href="help.html" style="color: black;">Contact Us</a></h5>
+          <h6 class="text-lowercase font-weight-light text-nowrap" style="color: white;" >stepupweb18@gmail.com</h6>
+          <h6 class="text-uppercase font-weight-light"  style="color: white;">6206087998</h6>
+          <h6 class="text-uppercase font-weight-light"><a href="https://www.instagram.com/" class="social-icon si-rounded si-small si-linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              fill="white" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+            </svg></a>   <a href="https://www.linkedin.com/in/aarchi-gupta-760879203" class="social-icon si-rounded si-small si-linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+              class="bi bi-linkedin" viewBox="0 0 16 16">
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+            </svg></a>  <a href="https://discord.com/" class="social-icon si-rounded si-small si-linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+              class="bi bi-discord" viewBox="0 0 16 16">
+              <path
+                d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" />
+            </svg></a></h6>
+  
         </div>
-
+        <div class="col-3 col-md text-center" >
+          <h5><a href="help.html" style="color: black;">About Us</a></h5>
+          <img src="https://e7.pngegg.com/pngimages/257/702/png-clipart-about-us-logo-business-logo-company-brand-service-icon-about-us-hd-miscellaneous-blue.png" alt="" style="height: 50px; width: 60px; margin-top:10px;">
+        </div>
+        <div class="col-3 col-md text-center">
+          <h5><a href="help.html" style="color: black;">Rate Us</a></h5>
+  
+          <div class="rating">
+  
+            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+            <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+            <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+          </div>
+  
+        </div>
+        <div class="col-3 col-md text-center">
+          <h5><a href="help.html" style="color: black;">Help Center</a></h5>
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-info-square-fill" viewBox="0 0 16 16" style="margin-top: 20px;">
+            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+          </svg>
+          <!-- <img src="https://cdn5.vectorstock.com/i/thumb-large/27/54/people-group-logo-design-vector-14542754.jpg" alt="" style="height: 50px; width: 50px; margin-top:10px;"> -->
+        </div>
       </div>
-      <div class="col-3 col-md text-center">
-        <h5><a href="/help.html" >Help Center</a></h5>
-
-      </div>
+      <!-- Grid row -->
+  
     </div>
+    <!-- Footer Links -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2022 Copyright:
+      <a href="/"> StepUp.com</a>
+    </div>
+    <!-- Copyright -->
+  
   </footer>
-
 
 
 
@@ -426,6 +430,34 @@ formlogin.addEventListener('submit',function(e) {
     checkLength(loginpassword,6,25);
     checkEmail(loginemail);
 });
+
+function addData(){
+  event.preventDefault();
+  var name = document.getElementById('name').value;
+  var username = document.getElementById('username').value;
+  var loginusername = document.getElementById('loginusername').value;
+  var loginemail = document.getElementById('loginemail').value;
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password');
+  var loginpassword = document.getElementById('loginpassword').value;
+  var  password2 = document.getElementById('password2').value;
+  
+
+  localStorage.setItem("name",name);
+  localStorage.setItem("username",username);
+  localStorage.setItem("loginusername",loginusername);
+  localStorage.setItem("loginemail",loginemail);
+  localStorage.setItem("email",email);
+  localStorage.setItem("password",password);
+  localStorage.setItem("loginpassword",loginpassword);
+  localStorage.setItem("password2",password2);
+
+  // document.getElementById("Login").addEventListener("click", myFunction);
+  //     function myFunction() {
+  //       window.location.href="http://programminghead.com";
+  //     }
+
+}
     </script>
 </body>
 
