@@ -110,8 +110,10 @@
         <br>
         Name:
         <input type="text" name="name"><br><br>
-        Contact: 
-        <input type="text" name="number"><br><br>
+        Gender: 
+        <input type="radio" value="M" name="gender">Male
+        <input type="radio" value="F" name="gender">Female
+        <br><br>
         <label for="degree">Degree:</label> 
         <select name="degree" id="degree">
             <option value="btech">B.Tech</option>
@@ -136,26 +138,33 @@
             <option value="fourth">4<sup>th</sup>  year</option>
         </select>
         <br><br>
-        
+        Contact: 
+        <input type="text" name="number"><br><br>
        
 <form action="" method="get">
     <br/>
-    <label for="">What is your patience level while coding?</label>
+    
+    <label for="">How many hours do you contribute in practicing coding?</label>
     <input type="text"><br>
-    <br><label for="">How data and business oriented are you?</label>
+    <br><label for="">Rate yourself on your problem solving skills: </label>
+    <input type="number" min="0" max="10" value="0"><br>
+    <br><label for="">Enter your current job position: </label>
+    <input type="radio" value="Low" name="skills">Low
+    <input type="radio" value="Medium" name="skills">Medium
+    <input type="radio" value="High" name="skills">High
+    <br>
+    <br><label for="">Are you interested in business?</label>
+    <input type="radio" value="Y" name="option">Yes
+    <input type="radio" value="N" name="option">No
+    <br>
+    <br><label for="">How do you rate your patience level in your job?</label>
+    <input type="number" min="0" max="10" value="0"><br>
+    <br><label for="">Specify the most used language that you prefer: </label>
     <input type="text"><br>
-    <br><label for="">How many hours of coding you prefer in your career?</label>
-    <input type="text"><br>
-    <br><label for="">What was your last attempted exam score?</label>
-    <input type="text"><br>
-    <br><label for="">What programming language you would say you are good at?</label>
-    <input type="text"><br>
-    <br><label for="">What career in computer science are you planning to pursue</label>
-    <input type="text"><br>
-    <br><label for="">Have you made any projects before?</label>
-    <input type="text"><br>
-    <br><label for="">How you done any internship?</label>
-    <input type="text"><br>
+    <br><label for="">Rate yourself on your interest in coding: </label>
+    <input type="number" min="0" max="10" value="0"><br>
+    <br><label for="">Rate yourself on your job satisfaction: </label>
+    <input type="number" min="0" max="10" value="0"><br>
     
 </form>      
 </div>
